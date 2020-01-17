@@ -8,3 +8,5 @@ services:
     image: "pet-monitoring"
   prometheus:
     image: "prom/prometheus"
+    ports:
+      - 9090:9090
