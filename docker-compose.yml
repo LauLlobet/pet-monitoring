@@ -5,6 +5,12 @@ services:
     ports:
       - 8080:8080
   prometheus:
-    image: "prom/prometheus"
+    image: "prom/prometheus-linux-arm64"
+    #linux image so it can be demoed the follwing command
+    # docker exec -ti 31a3860411c3  wget -O -  pets-monitoring:8080/orders
+    # otherwise use  image: "prom/prometheus"
+    volumes:
+      - /etc/prometheus/
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
     ports:
       - 9090:9090
