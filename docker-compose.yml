@@ -1,11 +1,9 @@
 version: '3'
 services:
-  web:
-    build: .
-    ports:
-      - "8080:8080"
   pets-monitoring:
     image: "pet-monitoring"
+    ports:
+      - 8080:8080
   prometheus:
     image: "prom/prometheus"
     ports:
